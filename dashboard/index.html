@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aya ERP — Marketing Automation Dashboard</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --card: #1a1d27;
+    --border: #2a2d3a;
+    --text: #e1e4ed;
+    --muted: #8b8fa3;
+    --accent: #4f8ff7;
+    --green: #34d399;
+    --orange: #f59e0b;
+    --red: #ef4444;
+    --purple: #a78bfa;
+    --teal: #2dd4bf;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+  }
+  .app { display:flex; min-height:100vh; }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 260px;
+    background: var(--card);
+    border-right: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+  }
+  .logo { font-size: 1.4em; font-weight: 700; margin-bottom: 30px; }
+  .logo span { color: var(--accent); }
+  .nav-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border-radius: 8px;
+    cursor: pointer; color: var(--muted);
+    transition: all 0.2s; margin-bottom: 4px;
+    font-size: 0.9em;
+  }
+  .nav-item:hover, .nav-item.active { background: #252836; color: var(--text); }
+  .nav-item .icon { font-size: 1.1em; }
+  .nav-section { font-size: 0.7em; text-transform: uppercase; color: var(--muted); letter-spacing: 1px; padding: 20px 12px 8px; }
+  
+  /* Main */
+  .main { margin-left: 260px; flex:1; padding: 30px; }
+  .header { margin-bottom: 30px; }
+  .header h1 { font-size: 1.8em; font-weight: 700; }
+  .header p { color: var(--muted); margin-top: 4px; }
+  
+  /* Stats */
+  .stats { display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 30px; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .stat-card .label { font-size: 0.8em; color: var(--muted); margin-bottom: 6px; }
+  .stat-card .value { font-size: 1.8em; font-weight: 700; }
+  .stat-card .change { font-size: 0.8em; margin-top: 4px; }
+  .stat-card .change.up { color: var(--green); }
+  .stat-card .change.down { color: var(--red); }
+  
+  /* Client grid */
+  .section-title { font-size: 1.1em; font-weight: 600; margin-bottom: 16px; display:flex; align-items:center; gap:8px; }
+  .client-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 30px; }
+  .client-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .client-card .name { font-weight: 600; font-size: 1.1em; }
+  .client-card .domain { color: var(--accent); font-size: 0.85em; margin-bottom: 10px; }
+  .client-card .meta { display:flex; gap:20px; font-size:0.8em; color:var(--muted); }
+  .client-card .meta strong { color: var(--text); display:block; }
+  .status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; }
+  .status-dot.active { background: var(--green); }
+  .status-dot.warning { background: var(--orange); }
+  
+  /* Flow Chart */
+  .flowchart {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 30px; margin-bottom: 30px;
+    overflow-x: auto;
+  }
+  .flow-container { display:flex; gap:12px; align-items:flex-start; min-width:max-content; flex-wrap:wrap; }
+  .flow-col {
+    flex:1; min-width:180px;
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; background: #15171f;
+  }
+  .flow-col h4 { font-size:0.85em; color: var(--accent); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.5px; }
+  .flow-step {
+    background: #1e2130; border-radius: 6px; padding: 8px 10px;
+    margin-bottom: 6px; font-size:0.8em; cursor:pointer;
+    border-left: 3px solid var(--accent);
+  }
+  .flow-step:hover { background: #252838; }
+  .flow-arrow { display:flex; align-items:center; color:var(--accent); font-size:1.5em; padding:0 4px; }
+  
+  /* Platform table */
+  .platform-table { width:100%; border-collapse:collapse; font-size:0.9em; }
+  .platform-table th { text-align:left; padding:10px 14px; color:var(--muted); font-weight:500; border-bottom:1px solid var(--border); }
+  .platform-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+  .platform-table tr:hover { background:#1e2130; }
+  .best { color:var(--green); font-weight:600; }
+  .good { color:var(--orange); }
+  .badge {
+    display:inline-block; padding:2px 8px; border-radius:4px;
+    font-size:0.75em; font-weight:600;
+  }
+  .badge.best { background:#064e3b20; color:var(--green); }
+  .badge.good { background:#78350f20; color:var(--orange); }
+  
+  /* Calendar heatmap placeholder */
+  .heatmap { display:flex; gap:4px; flex-wrap:wrap; margin-top:10px; }
+  .heat-cell { width:14px; height:14px; border-radius:3px; }
+  .heat-0 { background:#1e2130; }
+  .heat-1 { background:#1e3a5f; }
+  .heat-2 { background:#2563eb; }
+  .heat-3 { background:#3b82f6; }
+  .heat-4 { background:#60a5fa; }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo">Aya<span>ERP</span> 🦅</div>
+    <nav>
+      <div class="nav-item active"><span class="icon">📊</span> Dashboard</div>
+      <div class="nav-item"><span class="icon">👥</span> Clients</div>
+      <div class="nav-item"><span class="icon">📅</span> Content Calendar</div>
+      <div class="nav-item"><span class="icon">📈</span> Analytics</div>
+      <div class="nav-section">Automation</div>
+      <div class="nav-item"><span class="icon">🤖</span> AI Content Engine</div>
+      <div class="nav-item"><span class="icon">🔄</span> Selenium Reports</div>
+      <div class="nav-item"><span class="icon">📋</span> Strategy Generator</div>
+      <div class="nav-item"><span class="icon">🔔</span> Reminders</div>
+      <div class="nav-section">Settings</div>
+      <div class="nav-item"><span class="icon">⚙️</span> Configuration</div>
+      <div class="nav-item"><span class="icon">🔗</span> Integrations</div>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="header">
+      <h1>Marketing Operations Command Center</h1>
+      <p>Multi-client · Multi-region · AI-Powered · Last sync: Just now</p>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="label">Active Clients</div>
+        <div class="value">4</div>
+        <div class="change up">↑ SA · EU · UK · PK</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Monthly Content Posts</div>
+        <div class="value">248</div>
+        <div class="change up">↑ 12% vs last month</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Avg. Engagement Rate</div>
+        <div class="value">4.8%</div>
+        <div class="change up">↑ 0.6% industry avg</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Reports Generated (Auto)</div>
+        <div class="value">32</div>
+        <div class="change">Daily · Selenium</div>
+      </div>
+    </div>
+
+    <!-- Client Overview -->
+    <div class="section-title">📋 Active Client Portfolio</div>
+    <div class="client-grid">
+      <div class="client-card">
+        <div class="name">Fandaqah <span class="status-dot active"></span></div>
+        <div class="domain">fandaqah.com</div>
+        <div class="meta">
+          <div><strong>Saudi Arabia</strong>Region</div>
+          <div><strong>Hospitality</strong>Industry</div>
+          <div><strong>SEO + Social</strong>Services</div>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="name">Dyafa <span class="status-dot active"></span></div>
+        <div class="domain">dyafa.com</div>
+        <div class="meta">
+          <div><strong>Saudi Arabia</strong>Region</div>
+          <div><strong>Hospitality</strong>Industry</div>
+          <div><strong>SEO + Social</strong>Services</div>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="name">Best Web Developer <span class="status-dot active"></span></div>
+        <div class="domain">bestwebdeveloper.org</div>
+        <div class="meta">
+          <div><strong>UK · USA · Europe</strong>Region</div>
+          <div><strong>Web Dev / IT</strong>Industry</div>
+          <div><strong>SEO + Content</strong>Services</div>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="name">Sasta Milaga <span class="status-dot active"></span></div>
+        <div class="domain">sastamilaga.com</div>
+        <div class="meta">
+          <div><strong>Pakistan</strong>Region</div>
+          <div><strong>E-commerce</strong>Industry</div>
+          <div><strong>SEO + Social + Ads</strong>Services</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ERP Flowchart -->
+    <div class="section-title">🔄 Complete ERP Automation Flow</div>
+    <div class="flowchart">
+      <div class="flow-container">
+        <div class="flow-col">
+          <h4>1️⃣ Data Input</h4>
+          <div class="flow-step">Client onboarding form</div>
+          <div class="flow-step">Industry & competitor data</div>
+          <div class="flow-step">Keywords & target audience</div>
+          <div class="flow-step">Budget & timeline params</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-col">
+          <h4>2️⃣ AI Strategy Engine</h4>
+          <div class="flow-step">Market analysis (Grok/Gemini)</div>
+          <div class="flow-step">SEO/AEO/GEO keyword gen</div>
+          <div class="flow-step">Content strategy blueprint</div>
+          <div class="flow-step">Platform selection matrix</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-col">
+          <h4>3️⃣ Content Factory</h4>
+          <div class="flow-step">AI content generation</div>
+          <div class="flow-step">Image & video creation</div>
+          <div class="flow-step">SEO tags & meta built</div>
+          <div class="flow-step">Multi-language variants</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-col">
+          <h4>4️⃣ Distribution</h4>
+          <div class="flow-step">Social media scheduling</div>
+          <div class="flow-step">Blog post publishing</div>
+          <div class="flow-step">Best-time auto-posting</div>
+          <div class="flow-step">Cross-platform sync</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-col">
+          <h4>5️⃣ Engagement</h4>
+          <div class="flow-step">Auto-reply comments</div>
+          <div class="flow-step">Message inbox management</div>
+          <div class="flow-step">Sentiment tracking</div>
+          <div class="flow-step">Lead capture & CRM push</div>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-col">
+          <h4>6️⃣ Reporting</h4>
+          <div class="flow-step">Selenium daily scrape</div>
+          <div class="flow-step">Analytics dashboard</div>
+          <div class="flow-step">Client PDF reports</div>
+          <div class="flow-step">Strategy optimization</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Platform & Timing Matrix -->
+    <div class="section-title">📅 Best Platforms & Posting Times by Region</div>
+    <div style="background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; overflow-x:auto;">
+      <table class="platform-table">
+        <thead>
+          <tr>
+            <th>Client / Region</th>
+            <th>Best Platform</th>
+            <th>2nd Best</th>
+            <th>Best Post Time</th>
+            <th>Best Months</th>
+            <th>Best Content Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Fandaqah</strong> (SA)</td>
+            <td><span class="badge best">Instagram</span></td>
+            <td><span class="badge good">TikTok</span></td>
+            <td>8-10 PM AST / 6-8 PM AST</td>
+            <td>Ramadan, Hajj, Nov-Feb</td>
+            <td>Reels, Stories, Visual</td>
+          </tr>
+          <tr>
+            <td><strong>Dyafa</strong> (SA)</td>
+            <td><span class="badge best">LinkedIn</span></td>
+            <td><span class="badge good">Instagram</span></td>
+            <td>9-11 AM AST / 4-6 PM AST</td>
+            <td>Sep-Nov, Jan-Mar</td>
+            <td>Articles, Carousels</td>
+          </tr>
+          <tr>
+            <td><strong>BestWebDev</strong> (UK/EU/US)</td>
+            <td><span class="badge best">LinkedIn</span></td>
+            <td><span class="badge good">X (Twitter)</span></td>
+            <td>8-10 AM GMT / 12-2 PM EST</td>
+            <td>Jan-Mar, Sep-Oct</td>
+            <td>Case Studies, Threads</td>
+          </tr>
+          <tr>
+            <td><strong>SastaMilaga</strong> (PK)</td>
+            <td><span class="badge best">Facebook</span></td>
+            <td><span class="badge good">Instagram</span></td>
+            <td>7-9 PM PKT / 9-11 PM PKT</td>
+            <td>Ramadan, Eid, Nov-Dec</td>
+            <td>Video, Carousel, Offers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+</body>
+</html>

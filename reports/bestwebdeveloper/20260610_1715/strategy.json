@@ -1,0 +1,290 @@
+{
+  "client": "BestWebDeveloper",
+  "domain": "bestwebdeveloper.org",
+  "generated": "2026-06-10T17:15:04.207397",
+  "executive_summary": "Marketing strategy for BestWebDeveloper targeting UK/EU/US in Web Development / IT",
+  "platform_strategy": {
+    "primary": [
+      [
+        "linkedin",
+        9.0
+      ]
+    ],
+    "secondary": [
+      [
+        "instagram",
+        7
+      ],
+      [
+        "facebook",
+        7
+      ]
+    ],
+    "experimental": []
+  },
+  "monthly_plan": {
+    "January": {
+      "focus": "New year strategy launch, goal setting",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "8%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "February": {
+      "focus": "Valentine's campaigns, LEAP conference (SA)",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "15%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "March": {
+      "focus": "Spring campaigns, Ramadan prep",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "15%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "April": {
+      "focus": "Q1 review, Arabian Travel Market",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "8%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "May": {
+      "focus": "Summer campaign prep",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "8%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "June": {
+      "focus": "Mid-year review, summer content",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "5%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "July": {
+      "focus": "Summer engagement, back-to-school prep",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "5%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "August": {
+      "focus": "Pre-Q4 planning, content bank build",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "5%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "September": {
+      "focus": "Q4 ramp-up, fall campaigns",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "8%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "October": {
+      "focus": "Peak season campaigns",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "15%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "November": {
+      "focus": "Black Friday / White Friday, Web Summit",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "15%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    },
+    "December": {
+      "focus": "Year-end, holiday campaigns, annual review",
+      "content_themes": [
+        "Industry trends",
+        "Client success stories",
+        "Educational content"
+      ],
+      "budget_percentage": "15%",
+      "exhibitions": [],
+      "expected_kpi": {
+        "traffic_growth": "5-15%",
+        "engagement_rate": "3-7%",
+        "lead_generation": "10-30 leads"
+      }
+    }
+  },
+  "content_calendar": {
+    "weekly_posts": 21,
+    "content_mix": {
+      "educational": "40%",
+      "promotional": "20%",
+      "engagement": "20%",
+      "user_generated": "10%",
+      "behind_scenes": "10%"
+    },
+    "ai_tools": [
+      "Grok (research)",
+      "Claude Pro Max (long-form)",
+      "ChatGPT Pro (social)",
+      "Gemini Pro (SEO/AEO)"
+    ]
+  },
+  "seo_aeo_geo_strategy": {
+    "target_keywords": [
+      "web developer UK",
+      "best web development agency",
+      "custom website development",
+      "WordPress developer Europe",
+      "eCommerce development USA",
+      "web design company"
+    ],
+    "aeo_focus": "Structure content as Q&A for Google AI Overviews",
+    "geo_focus": "Include entity markup, structured data, E-E-A-T signals",
+    "technical_seo": [
+      "Schema.org markup",
+      "Core Web Vitals",
+      "Mobile-first",
+      "XML sitemap"
+    ]
+  },
+  "exhibition_calendar": [],
+  "budget_allocation": {
+    "content_creation": "30%",
+    "paid_ads": "25%",
+    "tools_subscriptions": "15%",
+    "exhibitions_events": "20%",
+    "miscellaneous": "10%"
+  },
+  "kpi_targets": {
+    "organic_traffic": "+25% in 6 months",
+    "social_followers": "+15% quarterly",
+    "engagement_rate": ">4%",
+    "lead_conversion": ">3%",
+    "client_retention": ">90%"
+  },
+  "reminders": [
+    {
+      "type": "daily",
+      "items": [
+        "Check analytics",
+        "Reply to comments",
+        "Post scheduled content"
+      ]
+    },
+    {
+      "type": "weekly",
+      "items": [
+        "Competitor analysis",
+        "Content planning",
+        "Team sync"
+      ]
+    },
+    {
+      "type": "monthly",
+      "items": [
+        "Full report generation",
+        "Strategy review",
+        "Client QBR prep"
+      ]
+    },
+    {
+      "type": "quarterly",
+      "items": [
+        "Strategy pivot check",
+        "Budget review",
+        "Exhibition planning"
+      ]
+    }
+  ]
+}

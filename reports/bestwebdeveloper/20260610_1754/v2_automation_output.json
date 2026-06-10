@@ -1,0 +1,48 @@
+{
+  "client": "BestWebDeveloper",
+  "timestamp": "20260610_1754",
+  "llm_routing": {
+    "content": {
+      "task_type": "outlines_formatting",
+      "recommended_llm": "ChatGPT Pro",
+      "reason": "Fast, cheap, good at structured short content",
+      "estimated_tokens": 500,
+      "estimated_cost": "$0.0150",
+      "prompt_template": "Generate a social media post outline with:\n- Hook (under 60 chars)\n- Body (150 words max)\n- 5-10 hashtags\n- CTA\n- Image prompt for DALL-E\n- Alt text for SEO\n\nContext: {'keywords': ['web developer UK', 'best web development agency', 'custom website development', 'WordPress developer Europe', 'eCommerce development USA', 'web design company'], 'region': 'UK/EU/US', 'industry': 'Web Development / IT'}"
+    },
+    "strategy": {
+      "task_type": "long_form_strategy",
+      "recommended_llm": "Claude Pro Max",
+      "reason": "Best at long-form reasoning, 200K context, strategy depth",
+      "estimated_tokens": 3000,
+      "estimated_cost": "$0.0450",
+      "prompt_template": "Generate a comprehensive marketing strategy including:\n- Executive summary\n- Target audience analysis\n- Platform recommendations with scoring\n- Monthly content calendar\n- Budget allocation\n- KPI targets and measurement framework\n- Competitive analysis\n- Risk mitigation\n\nContext: {'keywords': ['web developer UK', 'best web development agency', 'custom website development', 'WordPress developer Europe', 'eCommerce development USA', 'web design company'], 'region': 'UK/EU/US', 'industry': 'Web Development / IT'}"
+    },
+    "trends": {
+      "task_type": "realtime_trends",
+      "recommended_llm": "Grok",
+      "reason": "Real-time X/Twitter data access, fastest trending detection",
+      "estimated_tokens": 800,
+      "estimated_cost": "$0.0080",
+      "prompt_template": "Analyze current trends relevant to:\n- Identify top 5 trending topics\n- Assess relevance to client's industry\n- Suggest content angles for each trend\n- Note competitor activity\n\nContext: {'keywords': ['web developer UK', 'best web development agency', 'custom website development', 'WordPress developer Europe', 'eCommerce development USA', 'web design company'], 'region': 'UK/EU/US', 'industry': 'Web Development / IT'}"
+    },
+    "media": {
+      "task_type": "images_video_logic",
+      "recommended_llm": "Gemini Pro",
+      "reason": "Native multimodal, best at image understanding + generation",
+      "estimated_tokens": 1000,
+      "estimated_cost": "$0.0100",
+      "prompt_template": "Create visual content specification:\n- Image concept and composition\n- Color palette and mood\n- Text overlay suggestions\n- Video script (30s, 60s versions)\n- Thumbnail design spec\n\nContext: {'keywords': ['web developer UK', 'best web development agency', 'custom website development', 'WordPress developer Europe', 'eCommerce development USA', 'web design company'], 'region': 'UK/EU/US', 'industry': 'Web Development / IT'}"
+    }
+  },
+  "total_ai_cost_estimate": "$0.0780",
+  "upcoming_exhibitions": [],
+  "selenium_scripts_available": [
+    "scrape_trends",
+    "auto_login_platforms",
+    "auto_post",
+    "fetch_comments_dms",
+    "auto_reply",
+    "scrape_analytics"
+  ]
+}

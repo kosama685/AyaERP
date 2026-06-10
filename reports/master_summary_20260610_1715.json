@@ -1,0 +1,26 @@
+{
+  "fandaqah": {
+    "prompts_generated": 20,
+    "strategy_saved": true,
+    "report_saved": true,
+    "output_dir": "/root/.openclaw-autoclaw/workspace/marketing-erp/reports/fandaqah/20260610_1715"
+  },
+  "dyafa": {
+    "prompts_generated": 15,
+    "strategy_saved": true,
+    "report_saved": true,
+    "output_dir": "/root/.openclaw-autoclaw/workspace/marketing-erp/reports/dyafa/20260610_1715"
+  },
+  "bestwebdeveloper": {
+    "prompts_generated": 15,
+    "strategy_saved": true,
+    "report_saved": true,
+    "output_dir": "/root/.openclaw-autoclaw/workspace/marketing-erp/reports/bestwebdeveloper/20260610_1715"
+  },
+  "sastamilaga": {
+    "prompts_generated": 22,
+    "strategy_saved": true,
+    "report_saved": true,
+    "output_dir": "/root/.openclaw-autoclaw/workspace/marketing-erp/reports/sastamilaga/20260610_1715"
+  }
+}

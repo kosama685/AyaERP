@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AyaERP — Complete Automation Flow Chart</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { 
+    background:#0f1117; color:#e1e4ed; font-family:system-ui,sans-serif;
+    padding:20px;
+  }
+  h1 { text-align:center; margin-bottom:5px; font-size:1.6em; }
+  h1 span { color:#4f8ff7; }
+  .subtitle { text-align:center; color:#8b8fa3; margin-bottom:30px; font-size:0.85em; }
+  
+  .chart { 
+    max-width:1200px; margin:0 auto;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  
+  /* Phase rows */
+  .phase {
+    display:flex; gap:8px; align-items:stretch;
+  }
+  .phase-label {
+    width:120px; min-width:120px;
+    background:linear-gradient(135deg,#1a1d27,#252836);
+    border-radius:10px; padding:12px;
+    display:flex; flex-direction:column;
+    justify-content:center; align-items:center;
+    text-align:center; font-weight:700; font-size:0.8em;
+    border-left:4px solid #4f8ff7;
+  }
+  .phase-label .num { font-size:1.8em; color:#4f8ff7; }
+  
+  .steps { 
+    flex:1; display:flex; gap:8px;
+  }
+  
+  .step {
+    flex:1; background:#1a1d27; border:1px solid #2a2d3a;
+    border-radius:10px; padding:14px 12px;
+    position:relative;
+    transition:all 0.2s;
+  }
+  .step:hover { border-color:#4f8ff7; transform:translateY(-2px); }
+  .step-title { font-weight:700; font-size:0.85em; margin-bottom:6px; color:#4f8ff7; }
+  .step-items { font-size:0.75em; color:#8b8fa3; line-height:1.6; }
+  .step .tool { 
+    display:inline-block; background:#1e3a5f40; color:#60a5fa;
+    padding:2px 6px; border-radius:4px; font-size:0.7em; margin:2px 2px 0 0;
+  }
+  
+  /* Arrows between phases */
+  .arrow-row {
+    display:flex; gap:8px; align-items:center; height:20px;
+  }
+  .arrow-row .spacer { width:120px; min-width:120px; }
+  .arrow-row .arrow { 
+    flex:1; display:flex; justify-content:center; align-items:center;
+    color:#4f8ff7; font-size:1.2em;
+  }
+  
+  /* Legend */
+  .legend {
+    max-width:1200px; margin:30px auto 0;
+    display:flex; gap:20px; flex-wrap:wrap; justify-content:center;
+    padding:15px; background:#1a1d27; border-radius:10px; border:1px solid #2a2d3a;
+  }
+  .legend-item { display:flex; align-items:center; gap:6px; font-size:0.8em; }
+  .legend-dot { width:10px; height:10px; border-radius:3px; }
+  
+  /* Bottom summary */
+  .summary {
+    max-width:1200px; margin:20px auto;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:12px;
+  }
+  .summary-card {
+    background:#1a1d27; border:1px solid #2a2d3a;
+    border-radius:10px; padding:16px; text-align:center;
+  }
+  .summary-card .val { font-size:1.8em; font-weight:700; color:#34d399; }
+  .summary-card .lbl { font-size:0.75em; color:#8b8fa3; margin-top:4px; }
+</style>
+</head>
+<body>
+
+<h1>Aya<span>ERP</span> 🦅 — Complete Marketing Automation Flow</h1>
+<p class="subtitle">From Strategy → Content → Distribution → Engagement → Reporting | Built for Usama Khan</p>
+
+<div class="chart">
+  
+  <!-- Phase 1 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">01</span>DATA INPUT</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">📋 Client Onboarding</div>
+        <div class="step-items">
+          • Company profile & domain<br>
+          • Industry & target audience<br>
+          • Budget & timeline<br>
+          • Existing channels audit
+          <span class="tool">Form</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🔍 Market Research</div>
+        <div class="step-items">
+          • Competitor analysis<br>
+          • Keyword research<br>
+          • Industry trends<br>
+          • Regional insights
+          <span class="tool">Grok</span> <span class="tool">Gemini</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🎯 ICP & Targeting</div>
+        <div class="step-items">
+          • Ideal Client Profile<br>
+          • Geo-targeting (SA/EU/UK/US/PK)<br>
+          • Platform preferences<br>
+          • Language selection
+          <span class="tool">Claude</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">⚙️ Config Setup</div>
+        <div class="step-items">
+          • Platform accounts link<br>
+          • Posting schedule<br>
+          • Budget allocation<br>
+          • KPI baseline set
+          <span class="tool">JSON Config</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="arrow-row"><div class="spacer"></div><div class="arrow">▼ ▼ ▼</div></div>
+  
+  <!-- Phase 2 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">02</span>AI STRATEGY<br>ENGINE</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">📊 Strategy Blueprint</div>
+        <div class="step-items">
+          • 12-month marketing plan<br>
+          • Platform priority scoring<br>
+          • Content mix strategy<br>
+          • Budget allocation matrix
+          <span class="tool">Claude Pro Max</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🏷️ SEO/AEO/GEO</div>
+        <div class="step-items">
+          • Keyword mapping<br>
+          • Answer Engine Optimization<br>
+          • Generative Engine Optimization<br>
+          • Schema & structured data
+          <span class="tool">Gemini Pro</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📅 Calendar Builder</div>
+        <div class="step-items">
+          • Monthly content themes<br>
+          • Exhibition schedule<br>
+          • Seasonal campaigns<br>
+          • Best posting times
+          <span class="tool">Auto-generated</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🎪 Exhibition Tracker</div>
+        <div class="step-items">
+          • Regional exhibitions DB<br>
+          • Registration reminders<br>
+          • Budget planning<br>
+          • ROI tracking
+          <span class="tool">Cron Jobs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="arrow-row"><div class="spacer"></div><div class="arrow">▼ ▼ ▼</div></div>
+  
+  <!-- Phase 3 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">03</span>CONTENT<br>FACTORY</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">✍️ AI Content Gen</div>
+        <div class="step-items">
+          • Social media posts<br>
+          • Blog articles<br>
+          • Captions & hooks<br>
+          • Hashtag generation
+          <span class="tool">ChatGPT Pro</span> <span class="tool">Claude</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🎨 Image & Video</div>
+        <div class="step-items">
+          • AI image generation<br>
+          • Video script creation<br>
+          • Thumbnail design<br>
+          • Alt text for SEO
+          <span class="tool">DALL-E</span> <span class="tool">Midjourney</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🌐 Multi-Language</div>
+        <div class="step-items">
+          • Arabic (SA clients)<br>
+          • Urdu (PK clients)<br>
+          • English (EU/UK/US)<br>
+          • Cultural adaptation
+          <span class="tool">Grok</span> <span class="tool">Gemini</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">✅ Quality Check</div>
+        <div class="step-items">
+          • Plagiarism check<br>
+          • Brand voice match<br>
+          • SEO score validation<br>
+          • Compliance review
+          <span class="tool">Automated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="arrow-row"><div class="spacer"></div><div class="arrow">▼ ▼ ▼</div></div>
+  
+  <!-- Phase 4 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">04</span>DISTRIBUTION<br>& SCHEDULING</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">⏰ Smart Scheduling</div>
+        <div class="step-items">
+          • Best-time auto-posting<br>
+          • Timezone-aware (SA/EU/UK/US/PK)<br>
+          • 2 posts/day/platform<br>
+          • Queue management
+          <span class="tool">Scheduler</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📱 Social Auto-Post</div>
+        <div class="step-items">
+          • Instagram (posts + stories)<br>
+          • LinkedIn (articles + posts)<br>
+          • Facebook (posts + reels)<br>
+          • X/Twitter, TikTok
+          <span class="tool">Selenium</span> <span class="tool">APIs</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📝 Blog Auto-Publish</div>
+        <div class="step-items">
+          • WordPress auto-post<br>
+          • SEO metadata injection<br>
+          • Internal linking<br>
+          • XML sitemap update
+          <span class="tool">REST API</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🔄 Cross-Platform Sync</div>
+        <div class="step-items">
+          • Content repurposing<br>
+          • Platform-specific formatting<br>
+          • Hashtag optimization<br>
+          • Link tracking (UTM)
+          <span class="tool">Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="arrow-row"><div class="spacer"></div><div class="arrow">▼ ▼ ▼</div></div>
+  
+  <!-- Phase 5 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">05</span>ENGAGEMENT<br>& RESPONSE</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">💬 Auto-Reply Engine</div>
+        <div class="step-items">
+          • Comment replies<br>
+          • DM auto-responder<br>
+          • FAQ handling<br>
+          • Lead capture
+          <span class="tool">AI NLP</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📥 Inbox Management</div>
+        <div class="step-items">
+          • Unified inbox<br>
+          • Priority flagging<br>
+          • Sentiment analysis<br>
+          • Escalation rules
+          <span class="tool">Selenium</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🔗 CRM Integration</div>
+        <div class="step-items">
+          • Lead auto-capture<br>
+          • Contact enrichment<br>
+          • Pipeline push<br>
+          • Activity logging
+          <span class="tool">API</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📊 Sentiment Tracking</div>
+        <div class="step-items">
+          • Brand mention monitoring<br>
+          • Sentiment scoring<br>
+          • Crisis alerts<br>
+          • Trend detection
+          <span class="tool">AI Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="arrow-row"><div class="spacer"></div><div class="arrow">▼ ▼ ▼</div></div>
+  
+  <!-- Phase 6 -->
+  <div class="phase">
+    <div class="phase-label"><span class="num">06</span>REPORTING<br>& ANALYTICS</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">🌐 Selenium Scraper</div>
+        <div class="step-items">
+          • Google Analytics 4<br>
+          • Search Console<br>
+          • Social media insights<br>
+          • Auto-login with cookies
+          <span class="tool">Selenium</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📈 Analytics Dashboard</div>
+        <div class="step-items">
+          • Real-time KPI tracking<br>
+          • Traffic & conversions<br>
+          • Engagement metrics<br>
+          • ROI calculations
+          <span class="tool">HTML Dashboard</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">📋 Daily Email Reports</div>
+        <div class="step-items">
+          • Auto-generated PDF/XLS<br>
+          • Per-client summaries<br>
+          • KPI vs target<br>
+          • Action recommendations
+          <span class="tool">SMTP</span> <span class="tool">Selenium</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-title">🔄 Strategy Optimizer</div>
+        <div class="step-items">
+          • A/B test analysis<br>
+          • Platform re-scoring<br>
+          • Budget reallocation<br>
+          • Monthly strategy refresh
+          <span class="tool">AI Feedback Loop</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4f8ff7"></div> AI/ML Tool</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#34d399"></div> Automation</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Selenium</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a78bfa"></div> External API</div>
+</div>
+
+<!-- Summary -->
+<div class="summary">
+  <div class="summary-card">
+    <div class="val">4</div>
+    <div class="lbl">Active Clients</div>
+  </div>
+  <div class="summary-card">
+    <div class="val">6</div>
+    <div class="lbl">Automation Phases</div>
+  </div>
+  <div class="summary-card">
+    <div class="val">24</div>
+    <div class="lbl">Process Steps</div>
+  </div>
+  <div class="summary-card">
+    <div class="val">4</div>
+    <div class="lbl">Countries Covered</div>
+  </div>
+</div>
+
+</body>
+</html>
